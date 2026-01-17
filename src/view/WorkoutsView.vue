@@ -4,20 +4,19 @@
         
         <BaseButton class="btn btn-primary mb-3" @click="addNewWorkout">Pridať tréning</BaseButton>
 
-        <ul class="list-group">
-            <li v-for="workout in workoutsStore.workouts"
+            <WorkoutCard 
+                v-for="workout in workoutsStore.workouts"
                 :key="workout.id"
-                class="list-group-item"
-            >
-                {{ workout.name }}
-            </li>
-        </ul>
+                :workout="workout"
+                @delete="deleteWorkout"
+            />
     </div>
 </template>
 
 <script>
-    import {useWorkoutsStore} from '@/stores/workouts'
+    import {useWorkoutsStore} from '@/stores/workouts';
     import BaseButton from '@/components/base/BaseButton.vue';
+    import WorkoutCard from '@/components/WorkoutCard.vue';
     
     export default {
         name: 'WorkoutsView',
@@ -34,11 +33,16 @@
                 if(name){
                     this.workoutsStore.addWorkout(name)
                 }
+            },
+
+            deleteWorkout(id){
+                this.workoutsStore.deleteWorkout(id)
             }
         },
 
         components:{
-            BaseButton
+            BaseButton,
+            WorkoutCard
         }
     }
 </script>

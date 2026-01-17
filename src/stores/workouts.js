@@ -18,6 +18,10 @@ export const useWorkoutsStore = defineStore('workouts', {
                 name: name,
                 exercises: []
             })
+        },
+
+        deleteWorkout(id){
+            this.workouts = this.workouts.filter(w => w.id !== id)
         }
     }
 })
