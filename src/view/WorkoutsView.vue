@@ -2,12 +2,13 @@
     <div class="container mt-4">
         <h2>Workouts</h2>
         
-        <BaseButton class="btn btn-primary mb-3" @click="addNewWorkout">Pridať tréning</BaseButton>
+        <AddWorkoutForm @add-workout="addNewWorkout" />
 
-            <WorkoutList 
-                :workouts="workoutsStore.workouts"
-                @delete="deleteWorkout"
-            />
+        <WorkoutList 
+            class="mt-4"
+            :workouts="workoutsStore.workouts"
+            @delete="deleteWorkout"
+        />
     </div>
 </template>
 
@@ -16,6 +17,7 @@
     import BaseButton from '@/components/base/BaseButton.vue';
     import WorkoutCard from '@/components/WorkoutCard.vue';
     import WorkoutList from '@/components/WorkoutList.vue';
+    import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
     
     export default {
         name: 'WorkoutsView',
@@ -27,11 +29,8 @@
         },
 
         methods: {
-            addNewWorkout() {
-                const name = prompt("Zadaj názov tréningu")
-                if(name){
+            addNewWorkout(name) {
                     this.workoutsStore.addWorkout(name)
-                }
             },
 
             deleteWorkout(id){
@@ -41,7 +40,8 @@
 
         components:{
             BaseButton,
-            WorkoutList
+            WorkoutList,
+            AddWorkoutForm
         }
     }
 </script>
