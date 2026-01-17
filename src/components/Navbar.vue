@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <RoutreLink class="navbar-brand" to="/">Workout Tracker</RoutreLink>
+            <RouterLink class="navbar-brand" to="/">Workout Tracker</RouterLink>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
