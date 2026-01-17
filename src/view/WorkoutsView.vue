@@ -2,7 +2,7 @@
     <div class="container mt-4">
         <h2>Workouts</h2>
         
-        <button class="btn btn-primary mb-3" @click="addNewWorkout">Pridať tréning</button>
+        <BaseButton class="btn btn-primary mb-3" @click="addNewWorkout">Pridať tréning</BaseButton>
 
         <ul class="list-group">
             <li v-for="workout in workoutsStore.workouts"
@@ -17,6 +17,7 @@
 
 <script>
     import {useWorkoutsStore} from '@/stores/workouts'
+    import BaseButton from '@/components/base/BaseButton.vue';
     
     export default {
         name: 'WorkoutsView',
@@ -34,6 +35,10 @@
                     this.workoutsStore.addWorkout(name)
                 }
             }
+        },
+
+        components:{
+            BaseButton
         }
     }
 </script>
