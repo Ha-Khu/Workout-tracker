@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="submit">
         <div class="mb-3">
-            <label class="fomr-label">Názov tréningu</label>
+            <label class="form-label">Názov tréningu</label>
             <input 
                 type="text"
                 class="form-control"

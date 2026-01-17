@@ -14,8 +14,6 @@
 
 <script>
     import {useWorkoutsStore} from '@/stores/workouts';
-    import BaseButton from '@/components/base/BaseButton.vue';
-    import WorkoutCard from '@/components/WorkoutCard.vue';
     import WorkoutList from '@/components/WorkoutList.vue';
     import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
     
@@ -39,7 +37,6 @@
         },
 
         components:{
-            BaseButton,
             WorkoutList,
             AddWorkoutForm
         }

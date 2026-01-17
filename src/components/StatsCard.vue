@@ -12,7 +12,7 @@
         name: 'StatsCard',
 
         props: {
-            lable: {
+            label: {
                 type: String,
                 required: true
             },
