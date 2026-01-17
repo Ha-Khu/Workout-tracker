@@ -8,6 +8,14 @@ export const useWorkoutsStore = defineStore('workouts', {
     getters: {
         workoutCount(state){
             return state.workouts.length
+        },
+
+        totalExerciseCount(state){
+            let total = 0
+            for(const w of state.workouts){
+                if(Array.isArray(w.exercises)) total += w.exercises.length
+            }
+            return total
         }
     },
 
