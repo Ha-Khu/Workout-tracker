@@ -1,12 +1,15 @@
 <template>
-  <div class="container mt-5">
-    <h1 class="text-primary"> Workout Tracker </h1>
-    <button class="btn btn-success">Funguje</button>
-  </div>  
+  <Navbar />
+  <router-view />
 </template>
 
 <script>
+  import Navbar from './components/NavBar.vue';
+
   export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      Navbar
+    }
   }
 </script>
