@@ -4,10 +4,8 @@
         
         <BaseButton class="btn btn-primary mb-3" @click="addNewWorkout">Pridať tréning</BaseButton>
 
-            <WorkoutCard 
-                v-for="workout in workoutsStore.workouts"
-                :key="workout.id"
-                :workout="workout"
+            <WorkoutList 
+                :workouts="workoutsStore.workouts"
                 @delete="deleteWorkout"
             />
     </div>
@@ -17,6 +15,7 @@
     import {useWorkoutsStore} from '@/stores/workouts';
     import BaseButton from '@/components/base/BaseButton.vue';
     import WorkoutCard from '@/components/WorkoutCard.vue';
+    import WorkoutList from '@/components/WorkoutList.vue';
     
     export default {
         name: 'WorkoutsView',
@@ -42,7 +41,7 @@
 
         components:{
             BaseButton,
-            WorkoutCard
+            WorkoutList
         }
     }
 </script>
